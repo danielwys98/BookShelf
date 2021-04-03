@@ -25,7 +25,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
   </component>
@@ -146,7 +146,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/layouts" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../MultiCenterCRFManagementSystem-master" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -157,11 +157,12 @@
     <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\xampp\htdocs\BookShelf\public\css" />
+      <recent name="D:\xampp\htdocs\BookShelf\resources\views\layouts" />
       <recent name="D:\xampp\htdocs\BookShelf\resources\views" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\xampp\htdocs\BookShelf\resources\views\layouts" />
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\xampp\htdocs\BookShelf\resources\views" />
     </key>
   </component>
@@ -175,10 +176,15 @@
       <command value="php artisan serve --host 192.168.0.184 --port 8000" />
       <command value="php artisan serve --host 0.0.0.0 --port 80" />
       <command value="php artisan serve --host 0.0.0.0 --port 8002" />
+      <command value="php artisan make:controller BookController -mcr" />
+      <command value="php artisan make:model Book -mcr" />
+      <command value="php artisan migration" />
+      <command value="php artisan migrate" />
       <command value="php artisan serve" />
+      <command value="php artisan route:list" />
     </option>
   </component>
-  <component name="RunManager" selected="npm.dev">
+  <component name="RunManager" selected="PHPUnit.phpunit.xml">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner scope="XML" />
       <method v="2" />
@@ -210,6 +216,8 @@
       <option name="presentableId" value="Default" />
       <updated>1617338984751</updated>
       <workItem from="1617338987649" duration="6047000" />
+      <workItem from="1617345047513" duration="1467000" />
+      <workItem from="1617413059031" duration="6776000" />
     </task>
     <servers />
   </component>
@@ -226,31 +234,44 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="740" y="262" key="FileChooserDialogImpl" timestamp="1617339287688">
+    <state x="644" y="138" key="#phpunit.xml" timestamp="1617413457476">
       <screen x="0" y="0" width="1920" height="1015" />
     </state>
-    <state x="740" y="262" key="FileChooserDialogImpl/0.0.1920.1015/-1366.303.1366.768@0.0.1920.1015" timestamp="1617339287688" />
-    <state width="1877" height="270" key="GridCell.Tab.0.bottom" timestamp="1617345036919">
+    <state x="644" y="138" key="#phpunit.xml/0.0.1920.1015/-1366.303.1366.768@0.0.1920.1015" timestamp="1617413457476" />
+    <state x="740" y="262" key="FileChooserDialogImpl" timestamp="1617418243710">
       <screen x="0" y="0" width="1920" height="1015" />
     </state>
-    <state width="1877" height="270" key="GridCell.Tab.0.bottom/0.0.1920.1015/-1366.303.1366.768@0.0.1920.1015" timestamp="1617345036919" />
-    <state width="1877" height="270" key="GridCell.Tab.0.center" timestamp="1617345036919">
+    <state x="740" y="262" key="FileChooserDialogImpl/0.0.1920.1015/-1366.303.1366.768@0.0.1920.1015" timestamp="1617418243710" />
+    <state width="1877" height="267" key="GridCell.Tab.0.bottom" timestamp="1617423006650">
       <screen x="0" y="0" width="1920" height="1015" />
     </state>
-    <state width="1877" height="270" key="GridCell.Tab.0.center/0.0.1920.1015/-1366.303.1366.768@0.0.1920.1015" timestamp="1617345036919" />
-    <state width="1877" height="270" key="GridCell.Tab.0.left" timestamp="1617345036919">
+    <state width="1877" height="267" key="GridCell.Tab.0.bottom/0.0.1920.1015/-1366.303.1366.768@0.0.1920.1015" timestamp="1617423006650" />
+    <state width="1877" height="267" key="GridCell.Tab.0.center" timestamp="1617423006650">
       <screen x="0" y="0" width="1920" height="1015" />
     </state>
-    <state width="1877" height="270" key="GridCell.Tab.0.left/0.0.1920.1015/-1366.303.1366.768@0.0.1920.1015" timestamp="1617345036919" />
-    <state width="1877" height="270" key="GridCell.Tab.0.right" timestamp="1617345036919">
+    <state width="1877" height="267" key="GridCell.Tab.0.center/0.0.1920.1015/-1366.303.1366.768@0.0.1920.1015" timestamp="1617423006650" />
+    <state width="1877" height="267" key="GridCell.Tab.0.left" timestamp="1617423006650">
       <screen x="0" y="0" width="1920" height="1015" />
     </state>
-    <state width="1877" height="270" key="GridCell.Tab.0.right/0.0.1920.1015/-1366.303.1366.768@0.0.1920.1015" timestamp="1617345036919" />
-    <state x="616" y="234" width="672" height="677" key="run.anything.popup" timestamp="1617344996847">
+    <state width="1877" height="267" key="GridCell.Tab.0.left/0.0.1920.1015/-1366.303.1366.768@0.0.1920.1015" timestamp="1617423006650" />
+    <state width="1877" height="267" key="GridCell.Tab.0.right" timestamp="1617423006650">
       <screen x="0" y="0" width="1920" height="1015" />
     </state>
-    <state x="616" y="234" width="672" height="677" key="run.anything.popup/0.0.1920.1015/-1366.303.1366.768@0.0.1920.1015" timestamp="1617344996847" />
+    <state width="1877" height="267" key="GridCell.Tab.0.right/0.0.1920.1015/-1366.303.1366.768@0.0.1920.1015" timestamp="1617423006650" />
+    <state x="769" y="421" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1617345066294">
+      <screen x="0" y="0" width="1920" height="1015" />
+    </state>
+    <state x="769" y="421" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1015/-1366.303.1366.768@0.0.1920.1015" timestamp="1617345066294" />
+    <state x="616" y="234" width="672" height="677" key="run.anything.popup" timestamp="1617420481038">
+      <screen x="0" y="0" width="1920" height="1015" />
+    </state>
+    <state x="616" y="234" width="672" height="677" key="run.anything.popup/0.0.1920.1015/-1366.303.1366.768@0.0.1920.1015" timestamp="1617420481038" />
+    <state x="623" y="218" width="672" height="678" key="search.everywhere.popup" timestamp="1617421974881">
+      <screen x="0" y="0" width="1920" height="1015" />
+    </state>
+    <state x="623" y="218" width="672" height="678" key="search.everywhere.popup/0.0.1920.1015/-1366.303.1366.768@0.0.1920.1015" timestamp="1617421974881" />
   </component>
 </project>

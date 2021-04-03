@@ -36,4 +36,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function Books()
+    {
+        return $this->hasOne('App\Book','user_id',id);
+    }
 }

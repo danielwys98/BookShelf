@@ -4,23 +4,23 @@
     <div class="container-fluid">
         <h3>Add a new books!</h3>
         <hr/>
-        <form>
-
+        <form action="{{ route('saveBooks') }}" method="post">
+            @csrf
             <div class="form-group">
-                <label for="title">Books Title:</label>
-                <input type="text" class="form-control" id="title" placeholder="Enter books title">
+                <label for="book_title">Books Title:</label>
+                <input type="text" class="form-control" id="book_title" name="book_title" placeholder="Enter books title">
             </div>
             <div class="form-group">
-                <label for="author">Author:</label>
-                <input type="text" class="form-control" id="author" placeholder="Enter author's name">
+                <label for="book_author">Author:</label>
+                <input type="text" class="form-control" id="book_author" name="book_author" placeholder="Enter author's name">
             </div>
             <div class="form-group">
-                <label for="chapter">Chapters:</label>
-                <input type="number" class="form-control" id="chapter" placeholder="Enter amount of chapters">
+                <label for="book_chapter">Chapters:</label>
+                <input type="number" class="form-control" id="book_chapter" name="book_chapter" placeholder="Enter amount of chapters">
             </div>
             <div class="form-group">
-                <label for="categories">Categories:</label>
-                <select class="form-control" id="categories">
+                <label for="book_category">Categories:</label>
+                <select class="form-control" id="book_category" name="book_category">
                     <option>Fantasy</option>
                     <option>Fictions</option>
                     <option>Non-Fictions</option>
@@ -32,8 +32,8 @@
                     <option>Others</option>
                 </select>
             </div>
-            <button type="submit" class="btn btn-primary float-right">Create</button>
-            <input type="reset" class="btn btn-danger float-right mr-2">
+            <input type="submit" class="btn btn-primary float-right" value="submit"/>
+            <input type="reset" class="btn btn-danger float-right mr-2"/>
         </form>
     </div>
 @endsection

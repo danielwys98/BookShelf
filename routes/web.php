@@ -19,10 +19,14 @@ Route::get('/', function () {
 
 Auth::routes();
 
+//return views for index,create,edit books views
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/dashboard','HomeController@dashboard')->name('dashboard');
+Route::get('/dashboard','BookController@index')->name('dashboard');
 
-Route::get('/newBooks','HomeController@newBooks')->name('newBooks');
+Route::get('/newBooks','BookController@create')->name('newBooks');
 
-Route::get('/editBooks','HomeController@editBooks')->name('editBooks');
+Route::get('/editBooks','BookController@edit')->name('editBooks');
+
+//Saving books
+Route::post('/newBooks/created','BookController@store')->name('saveBooks');
