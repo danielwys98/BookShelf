@@ -41,7 +41,7 @@
                     </td>
                     <td>
                         <a href="{{route('editBooks',$book->book_id)}}"><button class="btn btn-secondary">Edit</button></a>
-                        <a href="{{route('deleteBooks',$book->book_id)}}"onclick="return confirm('Are you sure you want to delete this book?')"><button class="btn btn-danger">Delete</button></a>
+                        <a href="{{route('deleteBooks',$book->book_id)}}" onclick="return confirm('Are you sure you want to delete this book?')"><button class="btn btn-danger">Delete</button></a>
 
                     </td>
                 </tr>

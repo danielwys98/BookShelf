@@ -134,6 +134,7 @@
       <path value="$PROJECT_DIR$/vendor/symfony/routing" />
       <path value="$PROJECT_DIR$/vendor/symfony/event-dispatcher" />
       <path value="$PROJECT_DIR$/vendor/laravel/ui" />
+      <path value="$PROJECT_DIR$/vendor/realrashid/sweet-alert" />
     </include_path>
   </component>
   <component name="ProjectId" id="1qbCcogSxp1clHPy08MvkUGdJdW" />
@@ -180,9 +181,10 @@
       <command value="php artisan make:model Book -mcr" />
       <command value="php artisan migration" />
       <command value="php artisan route:list" />
-      <command value="php artisan serve" />
       <command value="php artisan migrate:rollback" />
       <command value="php artisan migrate" />
+      <command value="composer require realrashid/sweet-alert" />
+      <command value="php artisan serve" />
     </option>
   </component>
   <component name="RunManager" selected="PHPUnit.phpunit.xml">
@@ -221,7 +223,7 @@
       <workItem from="1617413059031" duration="6776000" />
       <workItem from="1617428134902" duration="7243000" />
       <workItem from="1617509735765" duration="4439000" />
-      <workItem from="1617521920096" duration="7962000" />
+      <workItem from="1617521920096" duration="12879000" />
     </task>
     <servers />
   </component>
@@ -249,33 +251,33 @@
       <screen x="0" y="0" width="1920" height="1015" />
     </state>
     <state x="740" y="262" key="FileChooserDialogImpl/0.0.1920.1015/-1366.303.1366.768@0.0.1920.1015" timestamp="1617524760837" />
-    <state width="1877" height="264" key="GridCell.Tab.0.bottom" timestamp="1617524597453">
+    <state width="914" height="264" key="GridCell.Tab.0.bottom" timestamp="1617538622077">
       <screen x="0" y="0" width="1920" height="1015" />
     </state>
-    <state width="1877" height="264" key="GridCell.Tab.0.bottom/0.0.1920.1015/-1366.303.1366.768@0.0.1920.1015" timestamp="1617524597453" />
-    <state width="1877" height="264" key="GridCell.Tab.0.center" timestamp="1617524597453">
+    <state width="914" height="264" key="GridCell.Tab.0.bottom/0.0.1920.1015/-1366.303.1366.768@0.0.1920.1015" timestamp="1617538622077" />
+    <state width="914" height="264" key="GridCell.Tab.0.center" timestamp="1617538622076">
       <screen x="0" y="0" width="1920" height="1015" />
     </state>
-    <state width="1877" height="264" key="GridCell.Tab.0.center/0.0.1920.1015/-1366.303.1366.768@0.0.1920.1015" timestamp="1617524597453" />
-    <state width="1877" height="264" key="GridCell.Tab.0.left" timestamp="1617524597453">
+    <state width="914" height="264" key="GridCell.Tab.0.center/0.0.1920.1015/-1366.303.1366.768@0.0.1920.1015" timestamp="1617538622076" />
+    <state width="914" height="264" key="GridCell.Tab.0.left" timestamp="1617538622076">
       <screen x="0" y="0" width="1920" height="1015" />
     </state>
-    <state width="1877" height="264" key="GridCell.Tab.0.left/0.0.1920.1015/-1366.303.1366.768@0.0.1920.1015" timestamp="1617524597453" />
-    <state width="1877" height="264" key="GridCell.Tab.0.right" timestamp="1617524597453">
+    <state width="914" height="264" key="GridCell.Tab.0.left/0.0.1920.1015/-1366.303.1366.768@0.0.1920.1015" timestamp="1617538622076" />
+    <state width="914" height="264" key="GridCell.Tab.0.right" timestamp="1617538622077">
       <screen x="0" y="0" width="1920" height="1015" />
     </state>
-    <state width="1877" height="264" key="GridCell.Tab.0.right/0.0.1920.1015/-1366.303.1366.768@0.0.1920.1015" timestamp="1617524597453" />
+    <state width="914" height="264" key="GridCell.Tab.0.right/0.0.1920.1015/-1366.303.1366.768@0.0.1920.1015" timestamp="1617538622077" />
     <state x="769" y="421" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1617345066294">
       <screen x="0" y="0" width="1920" height="1015" />
     </state>
     <state x="769" y="421" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1015/-1366.303.1366.768@0.0.1920.1015" timestamp="1617345066294" />
-    <state x="616" y="234" width="672" height="677" key="run.anything.popup" timestamp="1617524569147">
+    <state x="616" y="234" width="672" height="677" key="run.anything.popup" timestamp="1617538319841">
       <screen x="0" y="0" width="1920" height="1015" />
     </state>
-    <state x="616" y="234" width="672" height="677" key="run.anything.popup/0.0.1920.1015/-1366.303.1366.768@0.0.1920.1015" timestamp="1617524569147" />
-    <state x="623" y="218" width="672" height="678" key="search.everywhere.popup" timestamp="1617523497402">
+    <state x="616" y="234" width="672" height="677" key="run.anything.popup/0.0.1920.1015/-1366.303.1366.768@0.0.1920.1015" timestamp="1617538319841" />
+    <state x="1014" y="182" width="672" height="678" key="search.everywhere.popup" timestamp="1617539885688">
       <screen x="0" y="0" width="1920" height="1015" />
     </state>
-    <state x="623" y="218" width="672" height="678" key="search.everywhere.popup/0.0.1920.1015/-1366.303.1366.768@0.0.1920.1015" timestamp="1617523497402" />
+    <state x="1014" y="182" width="672" height="678" key="search.everywhere.popup/0.0.1920.1015/-1366.303.1366.768@0.0.1920.1015" timestamp="1617539885688" />
   </component>
 </project>

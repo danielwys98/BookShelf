@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Book;
 use App\User;
+use Alert;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
@@ -17,7 +18,7 @@ class BookController extends Controller
 
     public function index()
     {
-
+        //get all the books for current users
         $user=Auth::user()->id;
         $books = Book::where('user_id',$user)->get();
         return view('dashboard',compact('books'));
@@ -48,7 +49,7 @@ class BookController extends Controller
             'book_pages'=>'required',
         ],$custom);
 
-
+        //if data is validated then save all the data
         if($validatedData){
             $book = new Book;
             $user=Auth::user();
@@ -65,13 +66,15 @@ class BookController extends Controller
 
             $book->save();
 
-            return redirect(route('dashboard'));
+
+            return redirect(route('dashboard'))->with('success', 'New book is saved!');
         }
 
     }
 
     public function edit($id)
     {
+        //look for the book's details
         $book = Book::find($id);
 
         return view('editBooks',compact('book'));
@@ -100,13 +103,12 @@ class BookController extends Controller
         //find book
         $book = Book::find($id);
 
-        //check whether if pages completed is max, chapter is max or not
-        if($request->book_pagesCompleted == $book->book_pages)
+        //check whether if pages completed is max and chapter is max or not
+        //pages is max, chapter is not, not logic therefore an error will thrown to edit the data
+        if($request->book_pagesCompleted == $book->book_pages && $request->book_chaptersCompleted != $book->book_chapter )
         {
-            if($request->book_chaptersCompleted != $book->book_chapter)
-            {
-                return back()->withErrors(['You have finished the book, but chapter or pages is not right!']);
-            }
+                alert()->error('There is something wrong!');
+                return back()->withErrors(['You reached the end of the pages, but chapter is still in progress']);
         }
         if($validatedData)
         {
@@ -127,7 +129,7 @@ class BookController extends Controller
                 $book->book_isDone=0;
             }
             $book->save();
-            return redirect(route('dashboard'));
+            return redirect(route('dashboard'))->with('success', 'You updated the book!');
         }
 
     }
@@ -137,7 +139,7 @@ class BookController extends Controller
        $book = Book::find($id);
        $book->delete();
 
-       return redirect(route('dashboard'));
+       return redirect(route('dashboard'))->with('success', 'The book is in your memory now!');
 
     }
 }

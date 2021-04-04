@@ -58,11 +58,7 @@
                 </select>
             </div>
             <br/>
-        {{--    <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="book_isDone" name="book_isDone" value=1
-                       {{$book->book_isDone == 1 ? 'checked' : ''}}>
-                <label for="book_isDone" class="form-check-label">Finished</label>
-            </div>--}}
+
             <input type="submit" class="btn btn-primary float-right" value="Save"/>
             <input type="reset" class="btn btn-danger float-left"/>
         </form>
