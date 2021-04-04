@@ -8,7 +8,7 @@
     color:white;
 }
 .breadcrumb-item > a{
-    color:black;
+    color:grey;
 }
 .breadcrumb >.active a {
     color: #3490dc;
