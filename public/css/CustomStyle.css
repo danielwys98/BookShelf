@@ -1,6 +1,15 @@
 .navbar-brand p{
     color:white;
 }
+/*.nav-link > a{
+    color:white;
+}*/
 #navbarDropdown{
     color:white;
+}
+.breadcrumb-item > a{
+    color:black;
+}
+.breadcrumb >.active a {
+    color: #3490dc;
 }

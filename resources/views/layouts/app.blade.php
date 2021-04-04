@@ -23,8 +23,7 @@
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-dark shadow-sm">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/dashboard') }}">
+                <a class="navbar-brand" href="{{ route('dashboard') }}">
                     <p>{{ config('app.name') }}</p>
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -33,10 +32,7 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-
-                    </ul>
-
+                        {{--did put anything on the left side of nav bar--}}
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
@@ -70,9 +66,22 @@
                         @endguest
                     </ul>
                 </div>
-            </div>
         </nav>
-
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+               @if(Auth::check())
+                    @if(request()->is('dashboard'))
+                    <li class="breadcrumb-item active"><a href="{{route('dashboard')}}">Dashboard</a></li>
+                    @elseif(request()->is('newBooks'))
+                    <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
+                    <li class="breadcrumb-item active"><a href="{{route('newBooks')}}">Add a book</a></li>
+                    @else
+                        <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
+                        <li class="breadcrumb-item active"><a href="#">Edit the book</a></li>
+                    @endif
+               @endif
+            </ol>
+        </nav>
         <main class="py-4">
             @yield('content')
         </main>

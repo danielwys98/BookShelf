@@ -19,8 +19,10 @@ class CreateBooksTable extends Migration
             $table->string('book_title');
             $table->string('book_author');
             $table->integer('book_chapter');
+            $table->integer('book_chaptersCompleted');
+            $table->integer('book_pages');
+            $table->integer('book_pagesCompleted');
             $table->string('book_category');
-            $table->integer('book_hasCompleted');
             $table->boolean('book_isDone');
             $table->timestamps();
         });

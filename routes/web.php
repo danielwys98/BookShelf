@@ -26,7 +26,12 @@ Route::get('/dashboard','BookController@index')->name('dashboard');
 
 Route::get('/newBooks','BookController@create')->name('newBooks');
 
-Route::get('/editBooks','BookController@edit')->name('editBooks');
+Route::get('/editBooks/{id}','BookController@edit')->name('editBooks');
 
-//Saving books
+//Saving,update and delete books
 Route::post('/newBooks/created','BookController@store')->name('saveBooks');
+
+Route::put('/editBooks/{id}/updated','BookController@update')->name('updateBooks');
+
+Route::get('/deleteBooks/{id}','BookController@destroy')->name('deleteBooks');
+/*route::delete needed to spoof the method by using form on the delete button @ blade/view */

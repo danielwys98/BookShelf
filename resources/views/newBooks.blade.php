@@ -3,6 +3,16 @@
 @section('content')
     <div class="container-fluid">
         <h3>Add a new books!</h3>
+        @if($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    <p>There are some missing field that you needed to fill in!</p>
+                    @foreach($errors->all() as $error)
+                        <li>{{$error}}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         <hr/>
         <form action="{{ route('saveBooks') }}" method="post">
             @csrf
@@ -15,8 +25,12 @@
                 <input type="text" class="form-control" id="book_author" name="book_author" placeholder="Enter author's name">
             </div>
             <div class="form-group">
-                <label for="book_chapter">Chapters:</label>
+                <label for="book_chapter">Total Chapters:</label>
                 <input type="number" class="form-control" id="book_chapter" name="book_chapter" placeholder="Enter amount of chapters">
+            </div>
+            <div class="form-group">
+                <label for="book_chapter">Total Pages:</label>
+                <input type="number" class="form-control" id="book_pages" name="book_pages" placeholder="Enter amount of pages">
             </div>
             <div class="form-group">
                 <label for="book_category">Categories:</label>
@@ -32,8 +46,10 @@
                     <option>Others</option>
                 </select>
             </div>
-            <input type="submit" class="btn btn-primary float-right" value="submit"/>
-            <input type="reset" class="btn btn-danger float-right mr-2"/>
+            <br/>
+            <input type="submit" class="btn btn-primary float-right" value="Submit"/>
+            <input type="reset" class="btn btn-danger float-left" value="Reset"/>
         </form>
+        <a href="{{route('dashboard')}}"><button class="btn btn-secondary float-right mr-2">Back</button></a>
     </div>
 @endsection

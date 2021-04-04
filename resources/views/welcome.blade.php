@@ -68,7 +68,7 @@
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
-                        <a href="{{ url('/home') }}">Home</a>
+                        <a href="{{ route('dashboard') }}">Dashboard</a>
                     @else
                         <a href="{{ route('login') }}">Login</a>
 
@@ -83,7 +83,7 @@
                 <div class="title m-b-md">
                     Welcome to Book Shelf!
                 </div>
-                <small>Where you will not get lost with tons of books</small>
+                <small>Where you will never lose track of the chapters</small>
             </div>
         </div>
     </body>
