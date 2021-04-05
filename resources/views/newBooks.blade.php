@@ -18,19 +18,19 @@
             @csrf
             <div class="form-group">
                 <label for="book_title">Books Title:</label>
-                <input type="text" class="form-control" id="book_title" name="book_title" placeholder="Enter books title">
+                <input type="text" class="form-control" id="book_title" name="book_title" placeholder="Enter books title" value="{{old('book_title')}}">
             </div>
             <div class="form-group">
                 <label for="book_author">Author:</label>
-                <input type="text" class="form-control" id="book_author" name="book_author" placeholder="Enter author's name">
+                <input type="text" class="form-control" id="book_author" name="book_author" placeholder="Enter author's name" value="{{old('book_author')}}">
             </div>
             <div class="form-group">
                 <label for="book_chapter">Total Chapters:</label>
-                <input type="number" class="form-control" id="book_chapter" name="book_chapter" placeholder="Enter amount of chapters">
+                <input type="number" class="form-control" id="book_chapter" name="book_chapter" placeholder="Enter amount of chapters" value="{{old('book_chapter')}}">
             </div>
             <div class="form-group">
                 <label for="book_chapter">Total Pages:</label>
-                <input type="number" class="form-control" id="book_pages" name="book_pages" placeholder="Enter amount of pages">
+                <input type="number" class="form-control" id="book_pages" name="book_pages" placeholder="Enter amount of pages" value="{{old('book_pages')}}">
             </div>
             <div class="form-group">
                 <label for="book_category">Categories:</label>

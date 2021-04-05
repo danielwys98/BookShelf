@@ -20,7 +20,8 @@ class BookController extends Controller
     {
         //get all the books for current users
         $user=Auth::user()->id;
-        $books = Book::where('user_id',$user)->get();
+        //after getting all books then paginate 25 data in the table
+        $books = Book::where('user_id',$user)->paginate(25);
         return view('dashboard',compact('books'));
     }
 
@@ -51,24 +52,33 @@ class BookController extends Controller
 
         //if data is validated then save all the data
         if($validatedData){
-            $book = new Book;
             $user=Auth::user();
-
-            $book->user_id = $user->id;
-            $book->book_title= $request->book_title;
-            $book->book_author= $request->book_author;
-            $book->book_chapter= $request->book_chapter;
-            $book->book_pages = $request->book_pages;
-            $book->book_category= $request->book_category;
-            $book->book_pagesCompleted=0;
-            $book->book_chaptersCompleted = 0;
-            $book->book_isDone= 0;
-
-            $book->save();
-
-
-            return redirect(route('dashboard'))->with('success', 'New book is saved!');
+            //using first or new to check whether the book had been created before
+            //it checks every arguments
+            $book = Book::firstOrNew(
+                ['user_id' => $user->id,
+                'book_title'=>$request->book_title,
+                'book_author'=>$request->book_author,
+                'book_chapter'=>$request->book_chapter,
+                'book_pages'=>$request->book_pages,
+                'book_category'=>$request->book_category,
+                'book_pagesCompleted'=>0,
+                'book_chaptersCompleted'=>0,
+                'book_isDone'=>0,
+                ]);
         }
+        //if book is not exists in DB, it will save and return success msg
+        //else error msg will be prompted
+        if(!$book->exists)
+        {
+            $book->save();
+            return redirect(route('dashboard'))->with('success', 'New book is saved!');
+        }else
+        {
+            alert()->error('You already have the book!');
+            return back()->withInput();
+        }
+
 
     }
 
@@ -140,6 +150,17 @@ class BookController extends Controller
        $book->delete();
 
        return redirect(route('dashboard'))->with('success', 'The book is in your memory now!');
+
+    }
+
+    public function search(Request $request)
+    {
+        //getting current user's id
+        $user = Auth::user()->id;
+
+        //search the books by either title,authors or categories that choose by the user in the views
+        $books= Book::where($request->book_search_by,'LIKE','%'.$request->book_data.'%')->where('user_id',$user)->paginate(100);
+        return view('dashboard',compact('books'));
 
     }
 }

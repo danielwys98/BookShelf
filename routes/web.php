@@ -33,5 +33,9 @@ Route::post('/newBooks/created','BookController@store')->name('saveBooks');
 
 Route::put('/editBooks/{id}/updated','BookController@update')->name('updateBooks');
 
+//route::delete needed to spoof the method by using form on the delete button @ blade/view
 Route::get('/deleteBooks/{id}','BookController@destroy')->name('deleteBooks');
-/*route::delete needed to spoof the method by using form on the delete button @ blade/view */
+
+//route for searching book
+Route::get('/search','BookController@search')->name('searchBooks');
+

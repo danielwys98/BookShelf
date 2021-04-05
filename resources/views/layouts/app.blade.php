@@ -74,9 +74,12 @@
                     @elseif(request()->is('newBooks'))
                     <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
                     <li class="breadcrumb-item active"><a href="{{route('newBooks')}}">Add a book</a></li>
-                    @else
+                    @elseif(request()->is('editBooks'))
                         <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
                         <li class="breadcrumb-item active"><a href="#">Edit the book</a></li>
+                    @else
+                        <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
+                        <li class="breadcrumb-item active"><a href="#">Search Results</a></li>
                     @endif
                @endif
             </ol>
