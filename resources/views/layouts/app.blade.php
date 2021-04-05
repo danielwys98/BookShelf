@@ -12,6 +12,7 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
+
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -23,12 +24,17 @@
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-dark shadow-sm">
+            {{--check if the users is logging in, if yes then brand logo onclick will be redirect to dashboard--}}
+            {{--else back to the welcome page--}}
+            @if(Auth::check())
                 <a class="navbar-brand" href="{{ route('dashboard') }}">
                     <p>{{ config('app.name') }}</p>
                 </a>
-          {{--      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>--}}
+            @else
+                <a class="navbar-brand" href="{{ url('/') }}">
+                    <p>{{ config('app.name') }}</p>
+                </a>
+            @endif
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                         {{--did put anything on the left side of nav bar--}}
@@ -37,11 +43,11 @@
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="nav-link" href="{{ route('login') }}" id="login">{{ __('Login') }}</a>
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link" href="{{ route('register') }}" id="register">{{ __('Register') }}</a>
                                 </li>
                             @endif
                         @else
@@ -66,6 +72,7 @@
                     </ul>
                 </div>
         </nav>
+        {{--breadcrumb for navigations purpose--}}
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                @if(Auth::check())
@@ -82,6 +89,15 @@
                         <li class="breadcrumb-item active"><a href="#">Search Results</a></li>
                     @endif
                @endif
+               @guest
+                   @if(request()->is('login'))
+                       <li class="breadcrumb-item"><a href="{{url('/')}}">Home</a></li>
+                       <li class="breadcrumb-item active"><a href="{{route('login')}}">Logging in</a></li>
+                   @elseif(request()->is('register'))
+                           <li class="breadcrumb-item"><a href="{{url('/')}}">Home</a></li>
+                           <li class="breadcrumb-item active"><a href="{{route('register')}}">Register</a></li>
+                   @endif
+               @endguest
             </ol>
         </nav>
         <main class="py-4">
@@ -89,5 +105,6 @@
         </main>
     </div>
     @include('sweetalert::alert', ['cdn' => "https://cdn.jsdelivr.net/npm/sweetalert2@9"])
+
 </body>
 </html>

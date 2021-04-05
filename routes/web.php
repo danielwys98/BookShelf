@@ -20,7 +20,6 @@ Route::get('/', function () {
 Auth::routes();
 
 //return views for index,create,edit books views
-Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/dashboard','BookController@index')->name('dashboard');
 

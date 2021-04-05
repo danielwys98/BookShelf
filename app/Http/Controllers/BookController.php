@@ -22,7 +22,17 @@ class BookController extends Controller
         $user=Auth::user()->id;
         //after getting all books then paginate 25 data in the table
         $books = Book::where('user_id',$user)->paginate(25);
-        return view('dashboard',compact('books'));
+
+        //counting total book for current users
+        $countBooks = $books->count();
+
+        //count totals books are completed all categories
+        $temp = Book::where('user_id',$user)
+                    ->where('book_isDone',1)
+                    ->get();
+        $completedBooks = $temp->count();
+
+        return view('dashboard',compact(['books','countBooks','completedBooks']));
     }
 
 
@@ -160,7 +170,26 @@ class BookController extends Controller
 
         //search the books by either title,authors or categories that choose by the user in the views
         $books= Book::where($request->book_search_by,'LIKE','%'.$request->book_data.'%')->where('user_id',$user)->paginate(100);
-        return view('dashboard',compact('books'));
+        //counts the total books of the current search
+        $countBooks = $books->count();
+
+
+        //getting each book ids that the users had
+        $ids= [];
+        foreach($books as $temp)
+        {
+            $ids [] = $temp->book_id;
+        }
+        //check each books whether is done reading by the users.
+        //depending on the search type.
+        $temp2 = Book::whereIn('book_id',$ids)
+            ->where('book_isDone',1)
+            ->get();
+
+        //count all the books that are done reading by the users
+        $completedBooks = $temp2->count();
+
+        return view('dashboard',compact(['books','countBooks','completedBooks']));
 
     }
 }
