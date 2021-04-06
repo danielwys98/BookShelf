@@ -194,9 +194,9 @@
       <command value="php artisan route:list" />
       <command value="php artisan make:seed UsersTableSeeder" />
       <command value="composer dump-autoload" />
-      <command value="php artisan serve" />
       <command value="php artisan migrate:fresh" />
       <command value="php artisan db:seed" />
+      <command value="php artisan serve" />
     </option>
   </component>
   <component name="RunManager" selected="PHPUnit.phpunit.xml">
@@ -240,7 +240,7 @@
       <workItem from="1617609866576" duration="15066000" />
       <workItem from="1617673888430" duration="843000" />
       <workItem from="1617674743056" duration="3640000" />
-      <workItem from="1617680089609" duration="97000" />
+      <workItem from="1617680089609" duration="426000" />
     </task>
     <servers />
   </component>
@@ -292,13 +292,13 @@
       <screen x="0" y="0" width="1920" height="1015" />
     </state>
     <state x="769" y="421" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1015/-1366.303.1366.768@0.0.1920.1015" timestamp="1617345066294" />
-    <state x="616" y="234" width="672" height="677" key="run.anything.popup" timestamp="1617677041960">
+    <state x="616" y="234" width="672" height="677" key="run.anything.popup" timestamp="1617680473666">
       <screen x="0" y="0" width="1920" height="1015" />
     </state>
-    <state x="616" y="234" width="672" height="677" key="run.anything.popup/0.0.1920.1015/-1366.303.1366.768@0.0.1920.1015" timestamp="1617677041960" />
-    <state x="1014" y="182" width="672" height="678" key="search.everywhere.popup" timestamp="1617674873032">
+    <state x="616" y="234" width="672" height="677" key="run.anything.popup/0.0.1920.1015/-1366.303.1366.768@0.0.1920.1015" timestamp="1617680473666" />
+    <state x="1014" y="182" width="672" height="678" key="search.everywhere.popup" timestamp="1617680471748">
       <screen x="0" y="0" width="1920" height="1015" />
     </state>
-    <state x="1014" y="182" width="672" height="678" key="search.everywhere.popup/0.0.1920.1015/-1366.303.1366.768@0.0.1920.1015" timestamp="1617674873032" />
+    <state x="1014" y="182" width="672" height="678" key="search.everywhere.popup/0.0.1920.1015/-1366.303.1366.768@0.0.1920.1015" timestamp="1617680471748" />
   </component>
 </project>

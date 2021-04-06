@@ -21,7 +21,7 @@ class BookController extends Controller
         //get all the books for current users
         $user=Auth::user()->id;
         //after getting all books then paginate 10 data in the table
-        $books = Book::where('user_id',$user)->paginate(10);
+        $books = Book::where('user_id',$user)->orderBy('created_at', 'desc')->paginate(10);
         $temp = Book::where('user_id',$user)->get();
         //counting total book for current users
 
