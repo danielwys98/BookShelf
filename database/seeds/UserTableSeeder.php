@@ -17,12 +17,12 @@ class UsersTableSeeder extends Seeder
         User::truncate();
         DB::table('users')->truncate();
 
-        $admin = User::firstOrCreate([
+        $admin = User::create([
             'name'=>'Admin',
             'email'=>'admin@admin.com',
             'password'=> Hash::make('admin123')
         ]);
 
-        factory(User::class,4)->firstOrCreate();
+        factory(User::class,4)->create();
     }
 }

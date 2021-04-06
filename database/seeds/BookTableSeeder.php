@@ -13,11 +13,6 @@ class BookTableSeeder extends Seeder
      */
     public function run()
     {
-        $admin = User::create([
-            'name'=>'Admin',
-            'email'=>'admin@admin.com',
-            'password'=> Hash::make('admin123')
-        ]);
 
         factory(Book::class,100)->create();
     }
