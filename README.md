@@ -1,7 +1,7 @@
 **Used Tools**
-1.Laravel
-2.XAMPP (MYSQL)
-3.SweetAlertJS- by realrashid
+1.Laravel  
+2.XAMPP (MYSQL)  
+3.SweetAlertJS- by realrashid  
 
 **Steps to install the project**
 1. Download the project zip file.
