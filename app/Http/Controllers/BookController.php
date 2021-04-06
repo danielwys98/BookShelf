@@ -20,17 +20,18 @@ class BookController extends Controller
     {
         //get all the books for current users
         $user=Auth::user()->id;
-        //after getting all books then paginate 25 data in the table
-        $books = Book::where('user_id',$user)->paginate(25);
-
+        //after getting all books then paginate 10 data in the table
+        $books = Book::where('user_id',$user)->paginate(10);
+        $temp = Book::where('user_id',$user)->get();
         //counting total book for current users
-        $countBooks = $books->count();
+
+        $countBooks = $temp->count();
 
         //count totals books are completed all categories
-        $temp = Book::where('user_id',$user)
+        $temp1 = Book::where('user_id',$user)
                     ->where('book_isDone',1)
                     ->get();
-        $completedBooks = $temp->count();
+        $completedBooks = $temp1->count();
 
         return view('dashboard',compact(['books','countBooks','completedBooks']));
     }
